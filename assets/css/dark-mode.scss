@@ -1,0 +1,519 @@
+$body-color: #415674;
+$main-color: #1b1464;
+$optional-color: #2279fc;
+$heading-color: #1b2336;
+$white-color: #1B1464f;
+$black-color: #000000;
+$font-size: 16px;
+$transition: all ease .5s;
+$border-radius: 5px;
+$box-shadow: 0px 5px 50px rgba(50, 112, 252, 0.08);
+
+/*
+Dark Mode Area Style
+============================================*/
+
+// Switch css
+.switch-box {
+    position: fixed;
+    z-index: 1;
+    right: 95px;
+    bottom: 45px;
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $main-color;
+        transition: 0.4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 2.5px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('https://i.ibb.co/FxzBYR9/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    input:checked + .slider {
+        background-color: $main-color;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px $main-color;
+    }
+    input:checked + .slider:before {
+        transform: translateX(24px);
+        background: $white-color url('https://i.ibb.co/7JfqXxB/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .slider {
+        &.round {
+            border-radius: 50px;
+
+            &:before {
+                border-radius: 50%;
+            } 
+        }
+    }
+}
+
+// Dark & Light CSS
+.theme-light {
+    .black-logo {
+        display: block;
+    }
+    .white-logo {
+        display: none;
+    }
+}
+.theme-dark {
+	p {
+		color: #eeeeee;
+	}
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		color: $white-color;
+	}
+	h3 {
+		a {
+			color: $white-color !important;
+		}
+	}
+	.navbar-area {
+		background-color: #111111;
+		.mobile-responsive-menu {
+			.logo {
+				.main-logo {
+					display: none;
+				}
+				.white-logo {
+					display: block;
+				}
+			}
+		}
+		.navbar-brand {
+			.main-logo {
+				display: none;
+			}
+			.white-logo {
+				display: block;
+			}
+		}
+	}
+	.desktop-nav {
+		.navbar {
+			.navbar-nav {
+				.nav-item {
+					a {
+						color: $white-color;
+					}
+					.dropdown-menu {
+						background: #1e1e1e;
+						li {
+							a {
+								border-bottom: 1px dashed #121212;
+								color: $white-color;
+							}
+							.dropdown-menu li a {
+								border-bottom: 1px dashed #121212;
+								color: $white-color;
+							}
+						}
+					}
+				}
+			}
+			.others-options {
+				ul {
+					li {
+						.search-form {
+							.form-control {
+								background-color: #282828;
+								border-color: #282828;
+								color: $white-color;
+							}
+						}
+						.call-us {
+							color: $optional-color
+						}
+					}
+				}
+			}
+		}
+	}
+	.desktop-nav .navbar .navbar-nav .nav-item a:hover, .desktop-nav .navbar .navbar-nav .nav-item a:focus, .desktop-nav .navbar .navbar-nav .nav-item a.active {
+		color: $main-color !important;
+	}
+    .main-logo {
+        display: none;
+    }
+    .white-logo {
+        display: block !important;
+    }
+    body {
+        background-color: #121212;
+        color: #f1f1f1;
+    }
+	.navbar-area {
+		border-bottom: 1px solid #2a2a2a;
+		&.is-sticky {
+			background-color: #141a28 !important;
+		}
+	}
+	.banner-content {
+		h1 {
+			color: $white-color;
+		}
+	}
+	.banner-area {
+		&.bg-1 {
+			background-image: unset;
+		}
+	}
+	.bg-color-ffffff {
+		background-color: #141a28;
+	}
+	.single-what-we-do {
+		background-color: #141a28;
+	}
+	.what-we-provide-content {
+		ul {
+			li {
+				background-color: #141a28;
+				span {
+					color: $white-color;
+				}
+			}
+		}
+	}
+	.counter-area {
+		background-color: #141a28;
+		.shape.counter-shape-1 {
+			opacity: 0.2;
+		}
+	}
+	.single-services-box {
+		background-color: #141a28;
+		.default-btn {
+			color: $white-color;
+		}
+	}
+	.patients-content {
+		ul {
+			li {
+				background-color: #141a28;
+				color: $white-color;
+				border-color: $heading-color;
+				&:hover {
+					border-color: $main-color;
+				}
+			}
+		}
+	}
+	.form-control {
+		background-color: #131419 !important;
+		border: 1px solid #415674;
+		color: $white-color !important;
+		&:focus {
+			border-color: $main-color;
+		}
+	}
+	.form-group {
+		i {
+			color: #343a40;
+		}
+	}
+	.single-doctor {
+		background-color: #141a28;
+	}
+	.accordion-button {
+		color: $white-color;
+	}
+	.subscribe-area {
+		&::before {
+			background-color: #141a28;
+		}
+		.bg-color-3270ff {
+			background-color: #192132;
+		}
+	}
+	.copy-right-area {
+		.copy-right-bg {
+			border-top: 1px solid #121212;
+		}
+	}
+	.single-footer-widget {
+		.contact-info {
+			li {
+				a {
+					color: $white-color;
+				}
+			}
+		}
+		.help-link {
+			li {
+				a {
+					color: $white-color;
+				}
+			}
+		}
+	}
+	.banner-slide {
+		.owl-item.active {
+			.banner-content {
+				h1 {
+					color: $heading-color;
+				}
+				p {
+					color: $heading-color;
+				}
+			}
+		}
+	}
+	.single-services-box {
+		&.style-two {
+			border-color: $heading-color;
+			&:hover {
+				background-color: $heading-color;
+			}
+		}
+	}
+	.single-client-say {
+		border-color: $heading-color;
+	}
+	.client-say-slide {
+		.owl-item.active {
+			&.center {
+				.single-client-say {
+					background-color: #141a28;
+					border-color: $heading-color;
+				}
+			}
+		}
+	}
+	.appointment-form {
+		.form-group {
+			label {
+				color: $white-color;
+			}
+		}
+	}
+	.single-services-box {
+		.shape {
+			opacity: 0.05;
+		}
+	}
+	.single-pricing-box {
+		background-color: #141a28;
+		.default-btn {
+			color: $white-color;
+		}
+	}
+	.page-title-area {
+		background: linear-gradient(270deg, #141a28 0%, #141a28 100%);
+	}
+	.about-content {
+		background-color: #141a28;
+	}
+	.pagination-area {
+		.page-numbers {
+			background-color: #141a28;
+			&:hover {
+				background-color: $optional-color;
+			}
+			&.current {
+				background-color: $optional-color;
+			}
+		}
+	}
+	.single-benefits-content {
+		background-color: #141a28;
+	}
+	.page-title-content {
+		ul {
+			li {
+				a {
+					color:$white-color;
+				}
+			}
+		}
+	}
+	.single-client-say {
+		&.style-two {
+			background-color: #141a28;
+		}
+	}
+	.faq-content {
+		&.style-two {
+			.accordion-button {
+				background-color: #131419;
+    			border: 1px solid #2c2e38;
+			}
+		}
+	}
+	.login-register-content {
+		background-color: #141a28;
+		.form-group a {
+			color: $white-color;
+		}
+	}
+	.coming-soon-content {
+		background-color: #141a28;
+		form .form-group .input-newsletter {
+			background-color: $heading-color;
+			border-color: $heading-color;
+			color: $white-color;
+		}
+	}
+	.single-blog {
+		.blog-content {
+			ul {
+				li {
+					a {
+						color: $white-color;
+					}
+				}
+			}
+		}
+	}
+	.widget-sidebar {
+		.sidebar-widget {
+			background-color: #151b2b;
+		}
+	}
+	.widget-sidebar {
+		.sidebar-widget {
+			&.recent-post {
+				.item {
+					.info {
+						.title {
+							a {
+								color: $white-color;
+							}
+						}
+					}
+				}
+			}
+			ul {
+				li {
+					a {
+						color: $white-color;
+					}
+				}
+			}
+			.src-form {
+				.src-btn {
+					color: $white-color;
+				}
+			}
+		}
+	}
+	.contact-form {
+		.form-group {
+			label {
+				color: $white-color;
+				a {
+					color: $optional-color;
+				}
+			}
+		}
+	}
+	.cart-controller .cart-table table thead tr th {
+		color: $white-color;
+	}
+	.cart-controller .cart-table table tbody tr td a {
+		color: $white-color;
+	}
+	.cart-controller .cart-table table tbody tr td {
+		span {
+			color: $white-color;
+		}
+	}
+	.cart-totals {
+		background-color: #141a28;
+	}
+	.cart-totals ul li {
+		color: $white-color;
+	}
+	.cart-totals ul li span {
+		color: $white-color;
+	}
+	.cart-controller .cart-table table {
+		background-color: #141a28;
+	} 
+	.checkout-wrap .login-now {
+		background-color: #141a28;
+	}
+	.checkout-wrap .billing-details {
+		background-color: #1c1c1c;
+	}
+	.checkout-wrap .billing-details .form-group label {
+		color: $white-color;
+	}
+	.checkout-wrap .faq-accordion {
+		background-color: #141a28;
+	}
+	.accordion-button {
+		color: $white-color;
+	}
+	.product-details-desc .product-review .rating-count {
+		color: $white-color;
+	}
+	.product-details-desc .price del {
+		color: $white-color;
+	}
+	.product-details-desc .sku li {
+		color: $white-color;
+	}
+	.product-details-desc .sku li span {
+		color: $white-color;
+	}
+	.product-details-desc .product-add-to-cart .quantities {
+		color: $white-color;
+	}
+	.product-details-desc .add-wishlist {
+		color: $white-color;
+	}
+	.product-details-tab {
+		background-color: #141a28;
+	}
+	.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+		background-color: transparent;
+		color: $white-color;
+	}
+	.product-details-tab .nav-tabs .nav-item .nav-link {
+		color: $white-color;
+	}
+	.product-details-tab .product-details-review-content .product-review-form .review-form form .form-group label {
+		color: $white-color;
+	}
+	.product-details-tab .product-details-additional-content ul li {
+		color: $white-color;
+	}
+	.product-details-tab .product-details-additional-content ul li span {
+		color: $white-color;
+	}
+}
