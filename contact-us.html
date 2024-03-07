@@ -311,7 +311,7 @@
 			</div>
 		</div>  -->
 
-		<div class="contact-area ptb-100">
+		<div class="contact-area pt-100">
 			<div class="container">
 				<div class="section-title">
 					<span class="top-title title-dark">Contact Us</span>
@@ -406,7 +406,7 @@
 			  const recaptchResponse = grecaptcha.getResponse()
 			  formData.set('g-recaptcha-response',recaptchResponse)
 			  const localUrl  = 'http://localhost:3000/mile'
-			  const awsUrl = 'https://k2elzqapycrowkadrmmpwvz6ra0uubmm.lambda-url.us-west-2.on.aws/mile'
+			  const awsUrl = 'https://55sp6kytd4tmvkrqeuoo742tci0yuuub.lambda-url.us-west-2.on.aws/mile'
 			  fetch(
 				//localUrl
 				awsUrl
@@ -416,9 +416,13 @@
 			  }).then(response => 
 			  {response.json().then(data => {
 				resetForm()
+				alert('Successfully Submitted')
 			})
 			  }).catch(err => {
+				console.log('this is error', err.message)
 				resetForm()
+				alert('Successfully Submitted')
+
 			  })
 			}
 			function validateFileSize (){
@@ -443,41 +447,8 @@
 	
 		<!-- End Contact Area -->
 
-		<!-- Start Subscribe Area -->
-		<div class="subscribe-area">
-			<div class="container">
-				<div class="subscribe-bg bg-color-3270ff wow fadeInUp delay-0-2s">
-					<div class="row align-items-center">
-						<div class="col-lg-6">
-							<div class="subscribe-content">
-								<h2>Subscribe to the updates!</h2>
-								<p>Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.</p>
-							</div>
-						</div>
-
-						<div class="col-lg-6">
-							<div class="newsletter-wrap">
-								<form class="newsletter-form" data-toggle="validator">
-									<input style="background-color: #ffffff;" type="email" class="form-control" placeholder="Your email address" name="EMAIL" required autocomplete="off">
-		
-									<button class="default-btn" type="submit" style="color: #ffffff;">
-										Subscribe
-									</button>
-		
-									<div id="validator-newsletter" class="form-result"></div>
-								</form>
-							</div>	
-						</div>
-					</div>
-
-					<img src="assets/images/subscribe-shape.png" class="subscribe-shape" alt="Image">
-				</div>
-			</div>
-		</div>
-		<!-- End Subscribe Area -->
-
 		<!-- Start Footer Area -->
-		<div class="footer-area bg-color-ffffff pt-100 pb-70">
+		<div class="footer-area bg-color-ffffff">
 			<div class="container">
 			  <div class="row  row d-flex d-flex justify-content-around">
 				<div class="col-lg-3 col-sm-6">
@@ -516,18 +487,14 @@
 					</ul>
 				  </div>
 				</div>
-	  
-				<div class="col-lg-3 col-sm-6">
-				  <div class="single-footer-widget wow fadeInUp delay-0-4s">
-					<h3>Contacts Info</h3>
+				
+				<div class="col-lg-4 col-sm-6" style="padding-top: 75px !important;">
+				  <div class="single-footer-widget wow fadeInUp delay-0-6s quick-links "  ;>
+					<h3>Contact Info</h3>
 	  
 					<ul class="contact-info">
 					  <li>
 						<span>Address : &nbsp;</span>  &nbsp; &nbsp;
-	  
-						
-	  
-	  
 	  
 						King Abdulaziz Road, 13321, Sahafa, Riyadh Kingdom of Saudi
 						Arabia
@@ -550,7 +517,7 @@
 				  </div>
 				</div>
 	  
-				<div class="col-lg-3 col-sm-6">
+				<div class="col-lg-3 col-sm-6 pt" style="padding-top: 16px !important;" >
 				  <div class="single-footer-widget wow fadeInUp delay-0-6s quick-links";>
 					<h3>Quick Links</h3>
 	  
@@ -563,9 +530,6 @@
 					  </li>
 					  <li>
 						<a href="contact-us.html">Contact Us</a>
-					  </li>
-					  <li>
-						<a href="#">Privacy Policy</a>
 					  </li>
 					 
 					</ul>
